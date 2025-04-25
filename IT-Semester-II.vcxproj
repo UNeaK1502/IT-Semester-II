@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="IT-Semester-II.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\Informatik 2 - Aufgaben.pdf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
