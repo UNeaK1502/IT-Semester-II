@@ -24,6 +24,7 @@
     <ProjectGuid>{00f58da8-c13a-4e30-bdb2-5947e3d1b5e7}</ProjectGuid>
     <RootNamespace>ITSemesterII</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Aufgabe_2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,10 +128,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="IT-Semester-II.c" />
+    <ClCompile Include="Aufgabe_2.2.c" />
+    <ClCompile Include="Aufgabe_2.3.c" />
+    <ClCompile Include="Aufgabe_2.c" />
+    <ClCompile Include="Augabe_2.1.c" />
+    <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Informatik 2 - Aufgaben.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Aufgabe_2.1.h" />
+    <ClInclude Include="Aufgabe_2.2.h" />
+    <ClInclude Include="Aufgabe_2.3.h" />
+    <ClInclude Include="Aufgabe_2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
