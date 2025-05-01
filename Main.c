@@ -23,9 +23,13 @@ int main()
 			Teilaufgabe_2();
 			break;
 		case 3:
-				printf("Teilaufgabe 3 \n");
-				Teilaufgabe_3();
-				break;
+			printf("Teilaufgabe 3 \n");
+			Teilaufgabe_3();
+			break;
+		case 5:
+			printf("Teilaufgabe 5 \n");
+			Teilaufgabe_5();
+			break;
 		default:
 			printf("Ungueltige Eingabe, erneut versuchen:\n");
 			break;

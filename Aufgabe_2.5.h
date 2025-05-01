@@ -1,0 +1,1 @@
+int checkDuplicate(int* array);

@@ -34,6 +34,13 @@ void Teilaufgabe_3(){
 	int length = sizeof(array) / sizeof(array[0]);
 	int max = findMax(array, length);
 	printf("Das groesste Element im Array ist: %d", max);
-	// Test with an empty array
-
+}
+/// <summary>
+/// Schreibe eine Funktion, die überprüft, ob in einem Array von Typ int ein Wert doppelt vorkommt. Welche
+/// Komplexitätsklasse hat diese Funktion ?
+/// </summary>
+void Teilaufgabe_5() {
+	int array[5] = { 1, 69, 100, 100, 4711 };
+	int length = sizeof(array) / sizeof(array[0]);
+	int result = checkDuplicate(array, length);
 }
