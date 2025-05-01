@@ -30,8 +30,10 @@ void Teilaufgabe_2(){
 /// wenn der Rest die Länge 0 hat
 /// </summary>
 void Teilaufgabe_3(){
-	int array[5] = { 1, 2, 3, 4, 5 };
+	int array[5] = { 1, 69, 100, 420, 4711 };
 	int length = sizeof(array) / sizeof(array[0]);
 	int max = findMax(array, length);
 	printf("Das groesste Element im Array ist: %d", max);
+	// Test with an empty array
+
 }
