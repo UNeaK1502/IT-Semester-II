@@ -130,8 +130,9 @@
   <ItemGroup>
     <ClCompile Include="Aufgabe_2.2.c" />
     <ClCompile Include="Aufgabe_2.3.c" />
+    <ClCompile Include="Aufgabe_2.5.c" />
     <ClCompile Include="Aufgabe_2.c" />
-    <ClCompile Include="Augabe_2.1.c" />
+    <ClCompile Include="Aufgabe_2.1.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="Aufgabe_2.1.h" />
     <ClInclude Include="Aufgabe_2.2.h" />
     <ClInclude Include="Aufgabe_2.3.h" />
+    <ClInclude Include="Aufgabe_2.5.h" />
     <ClInclude Include="Aufgabe_2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

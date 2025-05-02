@@ -14,7 +14,7 @@ int checkDuplicate(int* array) {
 	int firstValue = array[0];
 	for (int i = 1; i < length; i++) {					//Schleife durchlaufen und Werte vergleichen
 		if (array[i] == firstValue) {
-			return 1; // Duplikat gefunden
+			return array[i]; // Duplikat gefunden
 		}
 	}
 	return checkDuplicate(array + 1);					// Rekursiver Aufruf mit dem Rest des Arrays, Pointer +1 verschieben	

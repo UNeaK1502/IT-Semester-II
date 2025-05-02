@@ -19,6 +19,7 @@ void Teilaufgabe_1() {
 /// </summary>
 void Teilaufgabe_2(){
 	int number = 0;
+	printf("Geben Sie eine Zahl ein:\n");
 	scanf_s("%d", &number);
 	int result = fibonacci(number);
 	printf("Die Fibonacci-Zahl von %d ist: %d", number, result);
@@ -43,4 +44,10 @@ void Teilaufgabe_5() {
 	int array[5] = { 1, 69, 100, 100, 4711 };
 	int length = sizeof(array) / sizeof(array[0]);
 	int result = checkDuplicate(array, length);
+	if (result !=0) {
+		printf("Es gibt ein Duplikat im Array: %d", result);
+	}
+	else {
+		printf("Es gibt kein Duplikat im Array");
+	}
 }

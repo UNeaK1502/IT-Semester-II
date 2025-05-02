@@ -21,13 +21,16 @@
     <ClCompile Include="Main.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Augabe_2.1.c">
+    <ClCompile Include="Aufgabe_2.1.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Aufgabe_2.2.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Aufgabe_2.3.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Aufgabe_2.5.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,6 +50,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Aufgabe_2.3.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Aufgabe_2.5.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
