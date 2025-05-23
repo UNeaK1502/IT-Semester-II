@@ -14,14 +14,15 @@
 //• Elemente zählen				 - Passt
 //• Element an Position i finden - Passt
 void Teilaufgabe_1() {
-	
+
 	node_t* firstelement = createList();
 	addElement(firstelement);
 	addElement(firstelement);
 	addElement(firstelement);
 	printAllElements(firstelement);
-	deleteElementAtPosition(firstelement, 2);
+	deleteElementAtPosition(&firstelement, 2); // &firstelement statt firstelement
 	printAllElements(firstelement);
+
 }
 
 

@@ -28,14 +28,16 @@ node_t* addElement(node_t* firstElement) {
 	return firstElement;
 }
 
-// ??????
+// Passt
 void deleteElementAtPosition(node_t** firstElement, int position) {
-	if (firstElement == NULL || *firstElement == NULL || position < 5) return;
+	//int count = countElements(*firstElement);												//Anzahl der Elemente ermitteln
+	//if (firstElement == NULL || *firstElement == NULL || position > count) return;		//Position kann mit CountElements() ermittelt werden
+	if (firstElement == NULL || *firstElement == NULL) return;
 
-	node_t* current = *firstElement;
+	node_t* current = *firstElement;				//Dereferenzieren
 	node_t* prev = NULL;
 
-	// Wenn das erste Element gelöscht werden soll
+	// Sonderfall erstes Eelement löschen
 	if (position == 0) {
 		*firstElement = current->next;
 		free(current);
@@ -44,15 +46,15 @@ void deleteElementAtPosition(node_t** firstElement, int position) {
 
 	// Finde das Element vor dem zu löschenden Element
 	for (int i = 0; current != NULL && i < position; i++) {
-		prev = current;
-		current = current->next;
+		prev = current;									//Merken welches Element vorher war
+		current = current->next;						//Aktuelles Element weiter setzen
 	}
 
 	// Wenn das Element nicht existiert
-	if (current == NULL) return;
+	if (current == NULL || prev == NULL) return;
 
-	prev->next = current->next;
-	free(current);
+	prev->next = current->next;							//Pointer vom vorherigen auf das übernächste Element setzen
+	free(current);										//Aktuelles Element freigeben
 }
 
 //Passt
@@ -78,7 +80,7 @@ void printAllElements(node_t * firstElement) {
 int countElements(node_t * firstElement) {
 	node_t* current = firstElement;
 	size_t counter = 0;
-	while (current != NULL && current->data != NULL) {				//Abbruchkriterium next Pointer entweder leer oder Daten nicht initialisiert
+	while (current != NULL && current->next != NULL) {				//Abbruchkriterium next Pointer entweder leer oder Daten nicht initialisiert
 		counter++;
 		current = current->next;
 	}
