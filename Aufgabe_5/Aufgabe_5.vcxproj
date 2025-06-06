@@ -129,12 +129,14 @@
   <ItemGroup>
     <ClCompile Include="Aufgabe_5.1.c" />
     <ClCompile Include="Aufgabe_5.2.c" />
+    <ClCompile Include="Aufgabe_5.3.c" />
     <ClCompile Include="Aufgabe_5.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aufgabe_5.1.h" />
     <ClInclude Include="Aufgabe_5.2.h" />
+    <ClInclude Include="Aufgabe_5.3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

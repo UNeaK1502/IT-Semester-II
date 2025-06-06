@@ -27,12 +27,18 @@
     <ClCompile Include="Aufgabe_5.2.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Aufgabe_5.3.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aufgabe_5.1.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Aufgabe_5.2.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Aufgabe_5.3.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

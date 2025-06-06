@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "Aufgabe_5.1.h"
+#include "Aufgabe_5.2.h"
+#include "Aufgabe_5.3.h"
 
 
 //Implementiere eine verkettete Liste, die Zahlen vom Typ int speichert. Deklariere dazu zunächst eine
@@ -34,7 +36,23 @@ void Teilaufgabe_1() {
 /// • Elemente z¨ahlen
 /// </summary>
 void Teilaufgabe_2() {
-
-
+	createEmptyStack();
+	int bla = 5;
+	push(bla);
+	int rueckgabewert = pop();
+	printf("Element das geloescht wurde war:\t%d\n", rueckgabewert);
+	
+	//5 weitere Elemente einfügen
+	for (size_t i = 0; i < 5; i++)
+	{
+		push(rand());
+	}
+	countStackElements();
+	deleteAllStackElements();
+	deleteStack();
+	countStackElements();
 }
 
+void Teilaufgabe_3() {
+
+}

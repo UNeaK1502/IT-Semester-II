@@ -19,11 +19,11 @@ int main()
 			break;
 		case 2:
 			printf("Teilaufgabe 2 \n");
-			//Teilaufgabe_2();
+			Teilaufgabe_2();
 			break;
 		case 3:
 			printf("Teilaufgabe 3 \n");
-			//Teilaufgabe_3();
+			Teilaufgabe_3();
 			break;
 		case 4:
 			printf("Teilaufgabe 4 \n");

@@ -6,7 +6,7 @@ typedef struct  {
 } StackElement_t;
 void createEmptyStack();
 void push(int value);
-void pop();
+int  pop();
 void deleteStack();
-void deleteAllElements();
-void countElements();
+void deleteAllStackElements();
+void countStackElements();
