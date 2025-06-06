@@ -1,6 +1,7 @@
 #pragma once
+#define STACK_SIZE 100
 typedef struct  {
-	int value;
+	int value[STACK_SIZE];
 	int count;
 } StackElement_t;
 void createEmptyStack();
