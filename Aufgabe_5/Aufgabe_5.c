@@ -39,8 +39,8 @@ void Teilaufgabe_2() {
 	createEmptyStack();
 	int bla = 5;
 	push(bla);
-	int rueckgabewert = pop();
-	printf("Element das geloescht wurde war:\t%d\n", rueckgabewert);
+	int returnValue = pop();
+	printf("Element das geloescht wurde war:\t%d\n", returnValue);
 	
 	//5 weitere Elemente einfügen
 	for (size_t i = 0; i < 5; i++)
@@ -54,5 +54,19 @@ void Teilaufgabe_2() {
 }
 
 void Teilaufgabe_3() {
+	createRingBuffer();
+	enqueueChar('z');
+	enqueueChar('e');
+	enqueueChar('h');
+	enqueueChar('n');
+	char returnValue = readFIFO();
+	printf("Das aelteste Element im Puffer ist:\t%c\n", returnValue);
+	int freeSpace = freeFIFO();
+	printf("Der Puffer hat noch %d freie Plaetze\n", freeSpace);
+	dequeueString();
+	freeSpace = freeFIFO();
+	printf("Der Puffer hat noch %d freie Plaetze\n", freeSpace);
+	deleteAllFIFOElements();
+	deleteFIFO();
 
 }
