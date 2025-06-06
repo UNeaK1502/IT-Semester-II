@@ -22,7 +22,19 @@ void Teilaufgabe_1() {
 	printAllElements(firstelement);
 	deleteElementAtPosition(&firstelement, 2); // &firstelement statt firstelement
 	printAllElements(firstelement);
+}
+/// <summary>
+/// Implementiere einen Stapelspeicher, der Zahlen vom Typ int speichert. Deklariere dazu zun¨achst eine
+/// geeignete Datenstruktur und implementiere dann folgende Funktionen 
+/// • Anlegen eines leeren Stapels
+/// • Ein Element auf den Stapel legen
+/// • Ein Element vom Stapel entfernen und dessen Wert zur¨uckgeben
+/// • L¨oschen des Stapels
+/// • L¨oschen aller Elemente
+/// • Elemente z¨ahlen
+/// </summary>
+void Teilaufgabe_2() {
+
 
 }
-
 

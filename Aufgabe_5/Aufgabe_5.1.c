@@ -37,20 +37,16 @@ void deleteElementAtPosition(node_t** firstElement, int position) {
 	node_t* current = *firstElement;				//Dereferenzieren
 	node_t* prev = NULL;
 
-	// Sonderfall erstes Eelement löschen
+	// Sonderfall erstes Element löschen
 	if (position == 0) {
 		*firstElement = current->next;
 		free(current);
 		return;
-	}
-
-	// Finde das Element vor dem zu löschenden Element
+	}														// Finde das Element vor dem zu löschenden Element
 	for (int i = 0; current != NULL && i < position; i++) {
 		prev = current;									//Merken welches Element vorher war
 		current = current->next;						//Aktuelles Element weiter setzen
-	}
-
-	// Wenn das Element nicht existiert
+	}														// Wenn das Element nicht existiert
 	if (current == NULL || prev == NULL) return;
 
 	prev->next = current->next;							//Pointer vom vorherigen auf das übernächste Element setzen
