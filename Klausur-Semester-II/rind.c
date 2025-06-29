@@ -21,8 +21,8 @@ rind_t* rind_create(const char* name, int age, int milkperday) {
 	rind_t* r = malloc(sizeof(rind_t));
 	if (!r) return NULL;
 
-	strncpy(r->name, name, RIND_NAME_LEN);
-	r->name[RIND_NAME_LEN] = '\0';
+	strncpy_s(r->name, RIND_NAME_LEN + 1, name, RIND_NAME_LEN);
+	//r->name[RIND_NAME_LEN] = '\0'; // optional, falls name genau 30 Zeichen lang ist
 	r->age = age;
 	r->milkperday = milkperday;
 	r->status = RIND_STAT_AVAIL;
