@@ -29,28 +29,16 @@ int matrikelnr(char* nr, int maxlen) {
 //Hauptprogramm
 int main() {
 	
-	//neuen int pointer "age" erstellen, und 23 zuweisen
 
-	int age = 23;
-	int age2 = 22;
-	int age3 = 21;
-	ll_t* ll = ll_new(&age);
-	int result = ll_print(ll, print_int);
-	printf("Ergebnis der Ausgabe: %d\n", result);
-	ll_append(ll, &age2);
-	ll_append(ll, &age3);
-	ll_print(ll, print_int);
-	printf("\n");
-	int bla = ll_count(ll);
-	printf("Anzahl der Elemente in der Liste: %zu\n", bla);
+	srand((unsigned int)time(NULL)); // Zufall initialisieren
 
-	ll_remove(&ll, 0); // Entfernt das Element an Index 1 (age2)
-	ll_print(ll, print_int);
-	bla = ll_count(ll);
-	printf("Anzahl der Elemente in der Liste: %zu\n", bla);
-	ll_print(ll, ll_get(ll, 0)); // Gibt das Element an Index 0
-	// Speicher aufräumen
-	//free(ll);
+	// 1. Rind erstellen
+	rind_t* kuh = rind_create("Berta", 5, 25);
+	if (!kuh) {
+		printf("Fehler beim Erstellen des Rinds.\n");
+		return 1;
+	}
+	int result = rind_print(kuh);
 
 	return 0;
 }
