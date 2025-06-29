@@ -5,11 +5,11 @@
 typedef enum { RIND_STAT_AVAIL, RIND_STAT_COWSHED } rind_status_t;
 
 typedef struct {
-	char name[RIND_NAME_LEN + 1];			// Name des Rinds (für Länge siehe Zeile 1)
+	char name[RIND_NAME_LEN + 1];			// Name des Rinds (fuer Laenge siehe Zeile 1)
 	int age;								// Alter des Rinds
 	int milkperday;							// Milchleistung pro Tag (in Liter)
 	rind_status_t status;					// Status des Rinds (siehe Datentyp aus Zeile 2)
-	ll_t* milk_log;							// Verkettete Liste für Milch-Historie
+	ll_t* milk_log;							// Verkettete Liste fuer Milch-Historie
 } rind_t;
 
 #ifndef DATE_T_DEFINED
@@ -18,13 +18,13 @@ typedef struct {
 	int day;		// Tag des Monats (1-31)
 	int month;		// Monat im Jahr (1-12)
 	int year;		// Jahr: 0-3000	
-} date_t;			// Neuer Datentyp für ein Datum
+} date_t;			// Neuer Datentyp fuer ein Datum
 #endif
 
 typedef struct {
 	date_t date;	// Datum des Melkens
 	int liters;		// Milchabgabe in Liter (mit einer Nachkommastelle!)	
-} milk_entry_t;		// Neuer Datentyp für Milch-Historie
+} milk_entry_t;		// Neuer Datentyp fuer Milch-Historie
 
 rind_t* rind_create(const char* name, int age, int milkperday);
 int rind_print(const void* rind);

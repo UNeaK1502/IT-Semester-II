@@ -1,8 +1,8 @@
 ﻿//Wie in der Datenstruktur ersichtlich, kann ein Rind zwei Status haben: entweder es ist ver-
-// fügbar(RIND_STAT_AVAIL), oder es ist bereits im Stall des Milchhofs(RIND_STAT_COWSHED).
-// Für den Namen der Rinder soll ein String konstanter Länge(z.B. 30) reserviert werden.
-// Weiterhin soll für jedes Rind eine Historie mit abgegebener Milch pro Tag gespeichert werden.
-// Dies ist für den Milchhof sehr wichtig, um für jedes Rind evaluieren zu können, ob das Rind die
+// fuegbar(RIND_STAT_AVAIL), oder es ist bereits im Stall des Milchhofs(RIND_STAT_COWSHED).
+// Fuer den Namen der Rinder soll ein String konstanter Laenge(z.B. 30) reserviert werden.
+// Weiterhin soll fuer jedes Rind eine Historie mit abgegebener Milch pro Tag gespeichert werden.
+// Dies ist fuer den Milchhof sehr wichtig, um fuer jedes Rind evaluieren zu koennen, ob das Rind die
 // erwartete Milchleistung erbringt.Die Historie wird als verkettete Liste gespeichert, wobei der
 // Pointer milk_log der Datenstruktur rind_t auf das erste Element dieser zeigt.Die verkettete
 // Liste soll die Funktionen der Teilaufgabe 0.3 verwenden und jeder Knoten der Liste soll Daten
@@ -67,14 +67,13 @@ int rind_milk(rind_t* rind, date_t date) {
 
 rind_status_t rind_decide(rind_t* rind) {
 	if (!rind) return RIND_STAT_AVAIL;
-
+	//Wenn die Random Zahl gerade ist, dann kommt das Rind in den Stall, sonst bleibt es draussen
 	if (rand() % 2 == 0) {
 		rind->status = RIND_STAT_COWSHED;
 	}
 	else {
 		rind->status = RIND_STAT_AVAIL;
 	}
-
 	return rind->status;
 }
 int rind_print_shed(const void* rind) {
@@ -96,14 +95,14 @@ int rind_print_shed(const void* rind) {
 	}
 
 	if (count > 0) {
-		float avg = sum / (float)count / 10.0;
-		printf("  Durchschnitt: %.1f L/Tag → ", avg);
+		float avg = (float)sum / (float)count / 10.0;
+		printf("  Durchschnitt: %.1f L/Tag -> ", avg);
 		if (avg < r->milkperday)
 			printf("unter Soll\n");
 		else if (avg == r->milkperday)
 			printf("im Soll\n");
 		else
-			printf("über Soll\n");
+			printf("ueber Soll\n");
 	}
 	else {
 		printf("  Keine Milchdaten vorhanden.\n");

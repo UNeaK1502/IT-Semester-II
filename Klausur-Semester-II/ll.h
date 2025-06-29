@@ -1,8 +1,8 @@
 #include <stdio.h>
 #pragma once
 typedef struct ll_s {
-	void* data;			// void-Pointer, für Daten der Rinder
-	struct ll_s* next;	// Zeiger auf nächstes Element der Liste
+	void* data;			// void-Pointer, fuer Daten der Rinder
+	struct ll_s* next;	// Zeiger auf naechstes Element der Liste
 } ll_t;
 
 ll_t* ll_new(void* data);

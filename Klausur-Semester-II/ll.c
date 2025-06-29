@@ -1,18 +1,18 @@
 #include "ll.h"
 #include <stdlib.h>
-// Die Funktion ll_search bekommt per Pointer search_fn eine Funktion übergeben, welche
+// Die Funktion ll_search bekommt per Pointer search_fn eine Funktion uebergeben, welche
 // zwei Argumente vom Typ const void* erwartet: die Daten des jeweils aktuellen Elements,
-// sowie den Parameter search der Funktion ll_search.Die Funktion soll Wahr / Falsch zurück -
-// geben, je nachdem, ob das aktuelle Element die gesuchten Daten enthält.Dadurch kann die
+// sowie den Parameter search der Funktion ll_search.Die Funktion soll Wahr / Falsch zurueck -
+// geben, je nachdem, ob das aktuelle Element die gesuchten Daten enthaelt.Dadurch kann die
 // Funktion ll_search generisch Daten suchen(vergleichbar mit qsort).In den Pointer idx soll
 // die Funktion den Index des gefundenen Elements, bzw. - 1, wenn kein Element gefunden wurde,
-// eintragen.Die Funktion soll einen Zeiger auf das gefundene Element, bzw.NULL zurückgeben.
+// eintragen.Die Funktion soll einen Zeiger auf das gefundene Element, bzw.NULL zurueckgeben.
 // 
 // Die Funktion ll_print ist auch generisch programmiert und gibt alle Elemente der verketteten Liste aus.
 // Dazu erwartet sie eine Funktion print_fn, welche als const void* Argument
-// die Daten des jeweils aktuellen Elements zur Ausgabe erhält.
-// Die Funktionen print_fn und ll_print können jeweils optional per int - Rückgabewert signalisieren, 
-// ob eine Ausgabe tatsächlich erfolgt ist.
+// die Daten des jeweils aktuellen Elements zur Ausgabe erhaelt.
+// Die Funktionen print_fn und ll_print koennen jeweils optional per int - Rueckgabewert signalisieren, 
+// ob eine Ausgabe tatsaechlich erfolgt ist.
 
 ll_t* ll_search(ll_t* ll, int (*search_fn)(const void*, const void*), const void* search, int* idx) {
 	//checken ob ein Parameter ungueltig ist
@@ -25,7 +25,7 @@ ll_t* ll_search(ll_t* ll, int (*search_fn)(const void*, const void*), const void
 	while (current != NULL) {
 		if (search_fn(current->data, search)) {
 			*idx = index; // Index des gefundenen Elements
-			return current; // Gefundenes Element zurückgeben
+			return current; // Gefundenes Element zurueckgeben
 		}
 		current = current->next;
 		index++;
@@ -45,7 +45,7 @@ int ll_print(const ll_t* ll, int (*print_fn)(const void*)) {
 		}
 		current = current->next;
 	}
-	return count; // Anzahl der erfolgreich ausgegebenen Elemente zurückgeben
+	return count; // Anzahl der erfolgreich ausgegebenen Elemente zurueckgeben
 }
 /// <summary>
 /// Neue Liste anlegen und erstes Element mit Daten initialisieren.
@@ -59,17 +59,17 @@ ll_t* ll_new(void* data) {
 	}
 	new_ll->data = data;
 	new_ll->next = NULL;
-	return new_ll; // Zeiger auf die neue Liste zurückgeben
+	return new_ll; // Zeiger auf die neue Liste zurueckgeben
 }
 /// <summary>
-/// Neues Element an die Liste anhängen
+/// Neues Element an die Liste anhaengen
 /// </summary>
-/// <param name="ll">Liste an die etwas angehängt werden soll</param>
-/// <param name="data">Daten die angehängt werden sollen</param>
+/// <param name="ll">Liste an die etwas angehaengt werden soll</param>
+/// <param name="data">Daten die angehaengt werden sollen</param>
 void ll_append(ll_t* ll, void* data) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL || data == NULL) {
-		return; // Keine Aktion, Daten ungültig 
+		return; // Keine Aktion, Daten ungueltig 
 	}
 	ll_t* new_node = (ll_t*)malloc(sizeof(ll_t));
 	if (new_node == NULL) {
@@ -81,24 +81,24 @@ void ll_append(ll_t* ll, void* data) {
 	while (current->next != NULL) {
 		current = current->next; // Zum letzten Element der Liste gehen
 	}
-	current->next = new_node; // Neues Element anhängen
+	current->next = new_node; // Neues Element anhaengen
 }
 /// <summary>
-/// Gibt das Element an der angegebenen Position zurück
+/// Gibt das Element an der angegebenen Position zurueck
 /// </summary>
 /// <param name="ll">Liste aus der Element geholt werden soll</param>
-/// <param name="index">Index des Elements was zurückgegeben werden soll</param>
+/// <param name="index">Index des Elements was zurueckgegeben werden soll</param>
 /// <returns></returns>
 ll_t* ll_get(ll_t* ll, size_t index) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL || index < 0) {
-		return NULL; // Keine Aktion, ungültiger Index
+		return NULL; // Keine Aktion, ungueltiger Index
 	}
 	ll_t* current = ll;
 	size_t current_index = 0;
 	while (current != NULL) {
 		if (current_index == index) {
-			return current; // Element an der angegebenen Position zurückgeben
+			return current; // Element an der angegebenen Position zurueckgeben
 		}
 		current = current->next;
 		current_index++;
@@ -109,11 +109,11 @@ ll_t* ll_get(ll_t* ll, size_t index) {
 /// Entfernt Element an Stelle index aus Liste.
 /// </summary>
 /// <param name="p_ll">zu bearbeitende Liste</param>
-/// <param name="index">Index des zu löschenden Elements</param>
+/// <param name="index">Index des zu loeschenden Elements</param>
 void ll_remove(ll_t** p_ll, size_t index) {
 	//checken ob ein Parameter ungueltig ist
 	if (p_ll == NULL || *p_ll == NULL || index < 0) {
-		return; // Keine Aktion, ungültiger Index oder Liste
+		return; // Keine Aktion, ungueltiger Index oder Liste
 	}
 	ll_t* current = *p_ll;
 	ll_t* previous = NULL;
@@ -125,7 +125,7 @@ void ll_remove(ll_t** p_ll, size_t index) {
 				*p_ll = current->next; // Kopf der Liste aktualisieren
 			}
 			else {
-				previous->next = current->next; // Vorheriges Element überspringen
+				previous->next = current->next; // Vorheriges Element ueberspringen
 			}
 			free(current); // Speicher freigeben
 			return; // Element entfernt, Funktion beenden
@@ -136,10 +136,10 @@ void ll_remove(ll_t** p_ll, size_t index) {
 	}
 }
 /// <summary>
-/// Zählt die Anzahl der Elemente in der Liste.
+/// Zaehlt die Anzahl der Elemente in der Liste.
 /// </summary>
-/// <param name="ll">Zu zählende Liste</param>
-/// <returns>Länge der Liste</returns>
+/// <param name="ll">Zu zaehlende Liste</param>
+/// <returns>Laenge der Liste</returns>
 size_t ll_count(const ll_t* ll) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL) {
@@ -148,10 +148,10 @@ size_t ll_count(const ll_t* ll) {
 	size_t count = 0;
 	const ll_t* current = ll;
 	while (current != NULL) {
-		count++; // Zähler erhöhen für jedes Element
-		current = current->next; // Zum nächsten Element gehen
+		count++; // Zaehler erhoehen fuer jedes Element
+		current = current->next; // Zum naechsten Element gehen
 	}
-	return count; // Anzahl der Elemente zurückgeben
+	return count; // Anzahl der Elemente zurueckgeben
 }
 
 /// <summary>
