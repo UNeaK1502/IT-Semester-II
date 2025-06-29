@@ -40,7 +40,7 @@ int ll_print(const ll_t* ll, int (*print_fn)(const void*)) {
 	const ll_t* current = ll;
 	int count = 0;
 	while (current != NULL) {
- 		if (print_fn(current->data)) {
+		if (print_fn(current->data)) {
 			count++; // Ausgabe erfolgreich
 		}
 		current = current->next;
@@ -89,7 +89,7 @@ void ll_append(ll_t* ll, void* data) {
 /// <param name="ll">Liste aus der Element geholt werden soll</param>
 /// <param name="index">Index des Elements was zurückgegeben werden soll</param>
 /// <returns></returns>
-ll_t* ll_get(ll_t* ll, size_t index){
+ll_t* ll_get(ll_t* ll, size_t index) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL || index < 0) {
 		return NULL; // Keine Aktion, ungültiger Index
@@ -110,7 +110,7 @@ ll_t* ll_get(ll_t* ll, size_t index){
 /// </summary>
 /// <param name="p_ll">zu bearbeitende Liste</param>
 /// <param name="index">Index des zu löschenden Elements</param>
-void ll_remove(ll_t** p_ll, size_t index){
+void ll_remove(ll_t** p_ll, size_t index) {
 	//checken ob ein Parameter ungueltig ist
 	if (p_ll == NULL || *p_ll == NULL || index < 0) {
 		return; // Keine Aktion, ungültiger Index oder Liste
@@ -123,7 +123,8 @@ void ll_remove(ll_t** p_ll, size_t index){
 			if (previous == NULL) {
 				// Element ist das erste Element der Liste
 				*p_ll = current->next; // Kopf der Liste aktualisieren
-			} else {
+			}
+			else {
 				previous->next = current->next; // Vorheriges Element überspringen
 			}
 			free(current); // Speicher freigeben
@@ -139,7 +140,7 @@ void ll_remove(ll_t** p_ll, size_t index){
 /// </summary>
 /// <param name="ll">Zu zählende Liste</param>
 /// <returns>Länge der Liste</returns>
-size_t ll_count(const ll_t* ll){
+size_t ll_count(const ll_t* ll) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL) {
 		return 0; // Keine Elemente in der Liste

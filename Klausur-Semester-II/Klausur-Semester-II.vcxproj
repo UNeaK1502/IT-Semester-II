@@ -21,8 +21,12 @@
   <ItemGroup>
     <ClCompile Include="ll.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="rind.c" />
+    <ClCompile Include="app.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="app.h" />
+    <ClInclude Include="rind.h" />
     <ClInclude Include="ll.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

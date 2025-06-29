@@ -21,9 +21,21 @@
     <ClCompile Include="ll.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="rind.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="app.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ll.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="rind.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="app.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
