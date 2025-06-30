@@ -1,37 +1,37 @@
-#include "ll.h"
 #include <stdlib.h>
-// Die Funktion ll_search bekommt per Pointer search_fn eine Funktion uebergeben, welche
-// zwei Argumente vom Typ const void* erwartet: die Daten des jeweils aktuellen Elements,
-// sowie den Parameter search der Funktion ll_search.Die Funktion soll Wahr / Falsch zurueck -
-// geben, je nachdem, ob das aktuelle Element die gesuchten Daten enthaelt.Dadurch kann die
-// Funktion ll_search generisch Daten suchen(vergleichbar mit qsort).In den Pointer idx soll
-// die Funktion den Index des gefundenen Elements, bzw. - 1, wenn kein Element gefunden wurde,
-// eintragen.Die Funktion soll einen Zeiger auf das gefundene Element, bzw.NULL zurueckgeben.
-// 
-// Die Funktion ll_print ist auch generisch programmiert und gibt alle Elemente der verketteten Liste aus.
-// Dazu erwartet sie eine Funktion print_fn, welche als const void* Argument
-// die Daten des jeweils aktuellen Elements zur Ausgabe erhaelt.
-// Die Funktionen print_fn und ll_print koennen jeweils optional per int - Rueckgabewert signalisieren, 
-// ob eine Ausgabe tatsaechlich erfolgt ist.
-
+#include "ll.h"
+/// <summary>
+/// Durchsucht eine erkettenliste nach einem Element.
+/// </summary>
+/// <param name="ll">Die verkettete Liste die durchsucht werden soll.</param>
+/// <param name="search_fn">Suchfunktion als Pointer</param>
+/// <param name="search">Nach was gesucht werden soll</param>
+/// <param name="idx">Index des gefundenen Elements</param>
+/// <returns>Wahr oder falsch</returns>
 ll_t* ll_search(ll_t* ll, int (*search_fn)(const void*, const void*), const void* search, int* idx) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL || search_fn == NULL || idx == NULL) {
 		return NULL;
 	}
 	ll_t* current = ll;
-	*idx = -1; // Standardwert, falls kein Element gefunden wird
+	*idx = -1;					// Standardwert, falls kein Element gefunden wird
 	size_t index = 0;
 	while (current != NULL) {
 		if (search_fn(current->data, search)) {
-			*idx = index; // Index des gefundenen Elements
-			return current; // Gefundenes Element zurueckgeben
+			*idx = (int)index;		// Index des gefundenen Elements
+			return current;		// Gefundenes Element zurueckgeben
 		}
 		current = current->next;
-		index++;
+		index++;				//index zum tracken
 	}
 	return NULL; // Kein Element gefunden
 }
+/// <summary>
+/// Eine verkettete Liste printen
+/// </summary>
+/// <param name="ll">Zu printende Liste</param>
+/// <param name="print_fn">Entsprechende print Funktion</param>
+/// <returns>0 Wenn nichts geprintet wurde bzw. Fehler, nicht-Null wenn etwas geprintet wurde</returns>
 int ll_print(const ll_t* ll, int (*print_fn)(const void*)) {
 	//checken ob ein Parameter ungueltig ist
 	if (ll == NULL || print_fn == NULL) {
@@ -39,9 +39,11 @@ int ll_print(const ll_t* ll, int (*print_fn)(const void*)) {
 	}
 	const ll_t* current = ll;
 	int count = 0;
+	// Solange current != NULL, also solange Elemente vorhanden sind
 	while (current != NULL) {
 		if (print_fn(current->data)) {
-			count++; // Ausgabe erfolgreich
+			count++; 
+			// Ausgabe erfolgreich
 		}
 		current = current->next;
 	}
@@ -53,6 +55,7 @@ int ll_print(const ll_t* ll, int (*print_fn)(const void*)) {
 /// <param name="data"></param>
 /// <returns></returns>
 ll_t* ll_new(void* data) {
+	//Speicher reservieren und Daten initialisieren
 	ll_t* new_ll = (ll_t*)malloc(sizeof(ll_t));
 	if (new_ll == NULL) {
 		return NULL; // Speicher konnte nicht zugewiesen werden
@@ -78,8 +81,9 @@ void ll_append(ll_t* ll, void* data) {
 	new_node->data = data;
 	new_node->next = NULL;
 	ll_t* current = ll;
+	// Bis zum letzten Element der Liste gehen
 	while (current->next != NULL) {
-		current = current->next; // Zum letzten Element der Liste gehen
+		current = current->next;
 	}
 	current->next = new_node; // Neues Element anhaengen
 }
@@ -101,7 +105,7 @@ ll_t* ll_get(ll_t* ll, size_t index) {
 			return current; // Element an der angegebenen Position zurueckgeben
 		}
 		current = current->next;
-		current_index++;
+		current_index++;		// Index erhoehen
 	}
 	return NULL; // Kein Element an der angegebenen Position gefunden
 }
@@ -147,20 +151,20 @@ size_t ll_count(const ll_t* ll) {
 	}
 	size_t count = 0;
 	const ll_t* current = ll;
+	// Solange zählen bis current NULL ist
 	while (current != NULL) {
 		count++; // Zaehler erhoehen fuer jedes Element
 		current = current->next; // Zum naechsten Element gehen
 	}
 	return count; // Anzahl der Elemente zurueckgeben
 }
-
 /// <summary>
 /// Funktion zum printen von int-Daten.
 /// </summary>
 /// <param name="data"></param>
 /// <returns></returns>
 int print_int(const void* data) {
-	printf("%d\n", *(const int*)data);
+	printf("%d\n", *(const int*)data);	//Zum const int pointer Casten, derefenzieren und als dezimal ausgeben
 	return 1;  // Erfolgreich ausgegeben
 }
 /// <summary>
@@ -169,6 +173,6 @@ int print_int(const void* data) {
 /// <param name="data"></param>
 /// <returns></returns>
 int print_string(const void* data) {
-	printf("%s\n", (const char*)data);
+	printf("%s\n", (const char*)data); //Zum const char pointer Casten, derefenzieren und string ausgeben
 	return 1;  // Erfolgreich ausgegeben
 }

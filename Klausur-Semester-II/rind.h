@@ -1,5 +1,5 @@
 #pragma once
-#include "ll.h" // Ensure ll_t is included
+#include "ll.h" // ll_t muss inkludiert werden, damit es verwendet werden kann
 
 # define RIND_NAME_LEN 30
 typedef enum { RIND_STAT_AVAIL, RIND_STAT_COWSHED } rind_status_t;
@@ -7,7 +7,7 @@ typedef enum { RIND_STAT_AVAIL, RIND_STAT_COWSHED } rind_status_t;
 typedef struct {
 	char name[RIND_NAME_LEN + 1];			// Name des Rinds (fuer Laenge siehe Zeile 1)
 	int age;								// Alter des Rinds
-	int milkperday;							// Milchleistung pro Tag (in Liter)
+	int milkPerDay;							// Milchleistung pro Tag (in Liter)
 	rind_status_t status;					// Status des Rinds (siehe Datentyp aus Zeile 2)
 	ll_t* milk_log;							// Verkettete Liste fuer Milch-Historie
 } rind_t;
@@ -15,9 +15,9 @@ typedef struct {
 #ifndef DATE_T_DEFINED
 #define DATE_T_DEFINED
 typedef struct {
-	int day;		// Tag des Monats (1-31)
-	int month;		// Monat im Jahr (1-12)
-	int year;		// Jahr: 0-3000	
+	int day;		
+	int month;		
+	int year;		
 } date_t;			// Neuer Datentyp fuer ein Datum
 #endif
 

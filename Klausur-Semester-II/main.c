@@ -1,10 +1,8 @@
 //Libraries
-#include <stdio.h>
+#include <string.h> 
 #include "ll.h"
 #include "app.h"
 #include "rind.h"
-
-
 
 
 //Definitionen
@@ -30,6 +28,6 @@ int matrikelnr(char* nr, int maxlen) {
 int main() {
 	
 	ll_t* rinder = NULL;	// Start: keine Rinder im System
-	app_menu(&rinder);		// Menue starten
+	app_menu(&rinder);		// Menü starten
 	return 0;
 }
